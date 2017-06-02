@@ -31,8 +31,10 @@ If all numbers do not match, you will get -1</center></h3>
   </table></center>
 <script>
 a=0;
-var myVar;
-function startFunction(){
+var myVar, A=false;
+
+function startFunction1(){
+A=true;
 myVar = setInterval(myFunction, 100);
  function myFunction() {
     var x = Math.floor((Math.random() * 10));
@@ -43,8 +45,14 @@ myVar = setInterval(myFunction, 100);
     document.getElementById("n3").innerHTML = z;
 	}
 	}
+	function startFunction(){
+	if(A==false){
+	startFunction1();
+}
+}
 	
 	function scorefunction(){
+	A=false;
 	var x1 = document.getElementById("n1").innerHTML;
 	var y1 = document.getElementById("n2").innerHTML;
 	var z1 = document.getElementById("n3").innerHTML;
