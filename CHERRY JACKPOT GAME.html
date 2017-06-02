@@ -22,7 +22,7 @@ If all numbers do not match, you will get -1</center></h3>
   </tr>
   </table>
 <button type="submit"  onclick="startFunction()"> SPIN</button>
-<button type="submit"  onclick="clearInterval(myVar); scorefunction();"> STOP</button>
+<button type="submit"  onclick="clearInterval(myVar); stopFunction();"> STOP</button>
 <table style="width:20% " border="1px solid black">
   <tr>
     <th id="n4">score</th>
@@ -33,8 +33,8 @@ If all numbers do not match, you will get -1</center></h3>
 a=0;
 var myVar, A=false;
 
-function startFunction1(){
-A=true;
+function startFunction1()
+{A=true;
 myVar = setInterval(myFunction, 100);
  function myFunction() {
     var x = Math.floor((Math.random() * 10));
@@ -44,29 +44,32 @@ myVar = setInterval(myFunction, 100);
 	var z = Math.floor((Math.random() * 10));
     document.getElementById("n3").innerHTML = z;
 	}
-	}
-	function startFunction(){
-	if(A==false){
+}
+	function startFunction()
+	{	if(A==
+	false){
 	startFunction1();
-}
-}
+		}
+	}
 	
-	function scorefunction(){
-	A=false;
+	function scorefunction()
+	{A=false;
 	var x1 = document.getElementById("n1").innerHTML;
 	var y1 = document.getElementById("n2").innerHTML;
 	var z1 = document.getElementById("n3").innerHTML;
 	if(x1==y1&&y1==z1&&z1==x1)
-	{
-	a+=100;
+	{a+=100;
 	 document.getElementById("n5").innerHTML = a;
-	 }
-	 else{
-	 a-=1;
+	}
+	 else{a-=1;
 	 document.getElementById("n5").innerHTML = a;
-	 }
+		}
 	
-}
+	}
+function stopFunction()
+	{if(A==true)
+	{scorefunction();}
+	}
 </script>
 
 
